@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Info meta tags, important for social media + SEO -->
+    <title>Majnr+ Unofficial</title>
+    <meta name="description" content="Majnr+ Unofficial Web">
+    <meta property="og:title" content="Majnr+ Unofficial">
+    <meta property="og:site_name" content="Majnr+ Unofficial">
+    <meta property="og:description" content="Majnr+ Unofficial Web">
+    <meta property="og:image" content="https://bybilly.uk/portal/img/minecraft.jpg">
+    <meta property="og:url" content="https://bybilly.uk/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        /* Add CSS for logo */
+        .logo-container {
+			position: absolute;
+            text-align: center;
+            margin-top: 10px;
+			top: 25px;
+        }
+        .logo-container img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<!-- Add logo container -->
+<div class="logo-container">
+    <a href="https://memkocz.github.io/majnrunofficial.github.io/"><img src="img/majnr.png" alt="Majnr+ Logo"></a>
+</div>
+
+<!-- Rest of your HTML code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Grid</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Arrange 4 items per row */
+            gap: 20px;
+            grid-auto-flow: row; /* Ensure items flow into rows */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        .grid-item {
+            position: relative;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            width: 300px; /* Set width of each grid item */
+            height: 150px; /* Set height of each grid item */
+        }
+
+        .player-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            top: 20px;
+            position: relative;
+        }
+
+        .player-name {
+            font-weight: bold;
+            top: 20px;
+            position: relative;
+        }
+
+        .player-role {
+            font-size: 14px;
+            color: #ccc;
+            top: 20px;
+            position: relative;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="grid-container" id="gridContainer">
+</div>
+
+<script>
+    const players = [
+        { name: "MaDix159", role: "Hráč" },
+        { name: "Fentysakk", role: "Owner" },
+        { name: "MSTRBTL", role: "Hráč" },
+        { name: "Botas_77", role: "Hráč" },
+        { name: "LukeFry", role: "Hráč" },
+        { name: "Witalex_", role: "Hráč" },
+        { name: "Qlxfty_", role: "Co-Owner" },
+        { name: "vendas206451", role: "Hráč" },
+        { name: "NotKikin333", role: "Moderator" },
+        { name: "zdendaip", role: "Co-Owner" },
+        { name: "LadyRockerka", role: "Hráč" }
+    ];
+
+    const gridContainer = document.getElementById('gridContainer');
+
+    players.forEach(player => {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+
+        const playerName = document.createElement('div');
+        playerName.classList.add('player-name');
+        playerName.textContent = player.name;
+
+        const playerRole = document.createElement('div');
+        playerRole.classList.add('player-role');
+        playerRole.textContent = player.role;
+
+        const playerImg = document.createElement('img');
+        playerImg.classList.add('player-img');
+        playerImg.src = `https://www.majnr.cz/api?action=head&user=${player.name}`;
+
+        gridItem.appendChild(playerImg);
+        gridItem.appendChild(playerName);
+        gridItem.appendChild(playerRole);
+        gridContainer.appendChild(gridItem);
+    });
+</script>
+
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/firefly.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
