@@ -28,7 +28,47 @@
         .logo-container img {
             width: 50px;
             height: 50px;
+
+            -webkit-animation-name: logo;
+	        animation-name: logo;
+	        -webkit-animation-duration: 5s;
+	        animation-duration: 5s;
+	        -webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	        -webkit-animation-timing-function: ease-in-out;
+	        animation-timing-function: ease-in-out;
         }
+
+        @-webkit-keyframes logo-container {
+	        0% {
+		        -webkit-transform: scale(1);
+		        transform: scale(1);
+	        }
+	        50% {
+		        -webkit-transform: scale(2);
+		        transform: scale(2);
+	        }       
+	        100% {
+		        -webkit-transform: scale(1);
+		        transform: scale(1);
+	        }
+        }
+
+        @keyframes logo-container {
+	        0% {
+		        -webkit-transform: scale(1);
+		        transform: scale(1);
+	        }
+	        50% {
+		        -webkit-transform: scale(2);
+		        transform: scale(2);
+	        }
+	        100% {
+		        -webkit-transform: scale(1);
+		        transform: scale(1);
+	        }
+        }
+
     </style>
 </head>
 <body>
@@ -52,10 +92,12 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Arrange 4 items per row */
+            grid-template-columns: repeat(3, 1fr); /* Arrange 4 items per row */
             gap: 20px;
             grid-auto-flow: row; /* Ensure items flow into rows */
             overflow-x: hidden; /* Hide horizontal scrollbar */
+            top: 70px;
+            position: relative;
         }
 
         .grid-item {
@@ -128,7 +170,7 @@
 
         const playerImg = document.createElement('img');
         playerImg.classList.add('player-img');
-        playerImg.src = `https://www.majnr.cz/api?action=head&user=${player.name}`;
+        playerImg.src = `https://minotar.net/helm/${player.name}/500.png`;
 
         gridItem.appendChild(playerImg);
         gridItem.appendChild(playerName);
